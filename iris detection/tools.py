@@ -17,7 +17,9 @@ def load_data_iris():
     sc.fit(X_train)
     X_train_std = sc.transform(X_train)
     X_test_std = sc.transform(X_test)
-    return X_train_std, X_test_std, y_train, y_test
+    X_combined_std = np.vstack((X_train_std, X_test_std))
+    y_combined = np.hstack((y_train, y_test))
+    return X_train_std, X_test_std, y_train, y_test, X_combined_std , y_combined
 
 def plot_decision_regions(X, y, classifier, test_idx=None,resolution=0.02):
     # setup marker generator and color map
@@ -40,4 +42,4 @@ def plot_decision_regions(X, y, classifier, test_idx=None,resolution=0.02):
     if test_idx:
         # plot all samples
         X_test, y_test = X[test_idx, :], y[test_idx]
-        plt.scatter(X_test[:,0], X_test[:, 1],c='#000000', edgecolor='black', alpha=1.0,linewidth=1, marker='o',s=100, label='test set')
+        plt.scatter(X_test[:,0], X_test[:, 1],c='#fff', edgecolor='black', alpha=0.2,linewidth=1, marker='o',s=100, label='test set')

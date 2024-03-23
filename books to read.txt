@@ -1,0 +1,3 @@
+Logistic regression : from introductory to advanced concepts and applications
+The Nature of Statistical Learning Theory, Springer Science+Business Media, Vladimir Vapnik, 2000
+A Tutorial on Support Vector Machines for Pattern Recognition (Data Mining and Knowledge Discovery, 2(2): 121-167, 1998).

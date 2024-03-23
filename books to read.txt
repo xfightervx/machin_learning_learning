@@ -1,3 +1,5 @@
 Logistic regression : from introductory to advanced concepts and applications
 The Nature of Statistical Learning Theory, Springer Science+Business Media, Vladimir Vapnik, 2000
 A Tutorial on Support Vector Machines for Pattern Recognition (Data Mining and Knowledge Discovery, 2(2): 121-167, 1998).
+An Algorithm for Finding BestMatches in Logarithmic Expected Time, J. H. Friedman, J. L. Bentley, and R.A.Finkel, ACM transactions on mathematical software (TOMS), 3(3): 209–226, 1977
+metrics in sklearn :  http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html

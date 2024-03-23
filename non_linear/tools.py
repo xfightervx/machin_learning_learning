@@ -1,7 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
+def gini(p):
+    return p * (1 - p) + (1 - p) * (1 - (1 - p))
+
+def entropy(p):
+    return -p * np.log2(p) - (1 - p) * np.log2(1 - p)
+
+def error(p):
+    return 1 - np.max([p, 1- p])
 
 def XOR_dataset(n=1):
     np.random.seed(n)
@@ -33,4 +44,15 @@ def plot_decision_regions(X, y, classifier, test_idx=None,resolution=0.02):
         X_test, y_test = X[test_idx, :], y[test_idx]
         plt.scatter(X_test[:,0], X_test[:, 1],c='#fff', edgecolor='black', alpha=0.2,linewidth=1, marker='o',s=100, label='test set')
 
-
+def load_data_iris():
+    iris = datasets.load_iris()
+    X = iris.data[:,[2,3]]
+    y = iris.target
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1, stratify=y)
+    sc = StandardScaler()
+    sc.fit(X_train)
+    X_train_std = sc.transform(X_train)
+    X_test_std = sc.transform(X_test)
+    X_combined_std = np.vstack((X_train_std, X_test_std))
+    y_combined = np.hstack((y_train, y_test))
+    return X_train_std, X_test_std, y_train, y_test, X_combined_std , y_combined

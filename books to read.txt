@@ -3,3 +3,6 @@ The Nature of Statistical Learning Theory, Springer Science+Business Media, Vlad
 A Tutorial on Support Vector Machines for Pattern Recognition (Data Mining and Knowledge Discovery, 2(2): 121-167, 1998).
 An Algorithm for Finding BestMatches in Logarithmic Expected Time, J. H. Friedman, J. L. Bentley, and R.A.Finkel, ACM transactions on mathematical software (TOMS), 3(3): 209–226, 1977
 metrics in sklearn :  http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.DistanceMetric.html
+Comparative Study of Techniques for Large-Scale Feature Selection, F. Ferri, P.Pudil, M. Hatef, and J. Kittler, pages 403-413, 1994
+http://scikit-learn.org/stable/modules/feature_selection.html   SEATURES SELECTION ALGORITHMES
+http://rasbt.github.io/mlxtend/user_guide/feature_selection/SequentialFeatureSelector

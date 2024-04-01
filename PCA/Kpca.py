@@ -43,11 +43,13 @@ def rbf_kernel_pca(X, gamma, n_componants):
     # Obtaining eigenpairs from the centered kernel matrix
     # numpy.eigh returns them in sorted order
     eigvals, eigvecs = eigh(K)
+    eigvals, eigvecs = eigvals[::-1], eigvecs[:, ::-1]
 
     # Collect the top k eigenvectors (projected samples)
-    X_pc = np.column_stack((eigvecs[:, -i] for i in range(1, n_componants + 1)))
+    alpha = np.column_stack((eigvecs[:, i] for i in range(n_componants)))
+    lambdas = [eigvals[i] for i in range(n_componants)]
 
-    return X_pc
+    return alpha, lambdas
 
 def get_moons_dataset(n = 100, rs=1):
     return make_moons(n_samples=n, random_state=rs)
